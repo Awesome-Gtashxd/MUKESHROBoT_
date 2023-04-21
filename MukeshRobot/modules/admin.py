@@ -5,7 +5,7 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Upda
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, run_async
 from telegram.utils.helpers import mention_html
-
+from MukeshRobot.modules.language import gs
 from MukeshRobot import DRAGONS, dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 from MukeshRobot.modules.helper_funcs.admin_rights import user_can_changeinfo
@@ -967,8 +967,9 @@ def button(update: Update, context: CallbackContext) -> str:
             "» ғᴀɪʟᴇᴅ ᴛᴏ ᴅᴇᴍᴏᴛᴇ, ᴍᴀʏʙᴇ ᴛʜᴀᴛ ᴜsᴇʀ ɪs ɴᴏᴛ ᴀɴ ᴀᴅᴍɪɴ ᴏʀ ᴍᴀʏʙᴇ ʟᴇғᴛ ᴛʜᴇ ɢʀᴏᴜᴩ !"
         )
         return ""
-
-
+def helps(chat):
+    return gs(chat, "admin_help")
+"""
 __help__ = """
 *User Commands*:
 » /admins*:* list of admins in the chat
@@ -991,6 +992,7 @@ __help__ = """
 » /setgpic*:* reply to an image to set as group photo
 » /setdesc*:* Set group description
 » /setsticker*:* Set group sticker
+""""
 """
 
 SET_DESC_HANDLER = CommandHandler("setdesc", set_desc)
