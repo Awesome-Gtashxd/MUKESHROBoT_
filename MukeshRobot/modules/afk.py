@@ -12,7 +12,7 @@ from MukeshRobot.modules.disable import (
 )
 from MukeshRobot.modules.sql import afk_sql as sql
 from MukeshRobot.modules.users import get_user_id
-
+from MukeshRobot.modules.language import gs
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
 
@@ -62,14 +62,15 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                "{} ɪs ʜᴇʀᴇ!",
-                "{} ɪs ʙᴀᴄᴋ!",
-                "{} ɪs ɴᴏᴡ ɪɴ ᴛʜᴇ ᴄʜᴀᴛ!",
-                "{} ɪs ᴀᴡᴀᴋᴇ!",
-                "{} ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ!",
-                "{} ɪs ғɪɴᴀʟʟʏ ʜᴇʀᴇ!",
-                "Wᴇʟᴄᴏᴍᴇ ʙᴀᴄᴋ! {}",
-                "Wʜᴇʀᴇ ɪs {}?\nɪɴ ᴛʜᴇ ᴄʜᴀᴛ?",
+                gs(chat.id, "afk_array1"),
+                gs(chat.id, "afk_array2"),
+                gs(chat.id, "afk_array3"),
+                gs(chat.id, "afk_array4"),
+                gs(chat.id, "afk_array5"),
+                gs(chat.id, "afk_array6"),
+                gs(chat.id, "afk_array7"),
+                gs(chat.id, "afk_array8"),
+            ]
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
@@ -123,7 +124,7 @@ def reply_afk(update: Update, context: CallbackContext):
 
     elif message.reply_to_message:
         user_id = message.reply_to_message.from_user.id
-        fst_name = message.reply_to_message.from_user.first_name
+        fst_name = message.reply_to_message.from_user.mention
         check_afk(update, context, user_id, fst_name, userc_id)
 
 
@@ -133,25 +134,15 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if int(userc_id) == int(user_id):
             return
         if not user.reason:
-            res = "{} is afk".format(fst_name)
+            res =gs(chat.id, "afk_check").format(fst_name)
             update.effective_message.reply_text(res)
         else:
-            res = "{} ɪs ᴀғᴋ ʙᴀʙʏ.\nʀᴇᴀsᴏɴ➪ <code>{}</code>".format(
+            res = gs(chat.id, "afk_check_reason").format(
                 html.escape(fst_name), html.escape(user.reason)
             )
             update.effective_message.reply_text(res, parse_mode="html")
 
 
-__help__ = """
-©️ [ᴍᴜᴋᴇsʜ] (f"tg://user?id={OWNER_ID}"))
-
-*ᴀᴡᴀʏ ғʀᴏᴍ ɢʀᴏᴜᴘ*
- ❍ /afk <reason>*:* ᴍᴀʀᴋ ʏᴏᴜʀsᴇʟғ ᴀs ᴀғᴋ(ᴀᴡᴀʏ ғʀᴏᴍ ᴋᴇʏʙᴏᴀʀᴅ).
- ❍ ʙʏᴇ <ʀᴇᴀsᴏɴ>*:* sᴀᴍᴇ ᴀs ᴛʜᴇ ᴀғᴋ ᴄᴏᴍᴍᴀɴᴅ - ʙᴜᴛ ɴᴏᴛ ᴀ ᴄᴏᴍᴍᴀɴᴅ.
-ᴡʜᴇɴ ᴍᴀʀᴋᴇᴅ ᴀs ᴀғᴋ, ᴀɴʏ ᴍᴇɴᴛɪᴏɴs ᴡɪʟʟ ʙᴇ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴡɪᴛʜ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ sᴀʏ ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ!
- 
-©️ Pᴏᴡᴇʀᴇᴅ ʙʏ @Mukeshbotzone
-"""
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
 AFK_REGEX_HANDLER = DisableAbleMessageHandler(
