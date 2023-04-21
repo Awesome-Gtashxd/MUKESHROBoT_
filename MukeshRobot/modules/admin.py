@@ -992,7 +992,7 @@ __help__ = """
 » /setgpic*:* reply to an image to set as group photo
 » /setdesc*:* Set group description
 » /setsticker*:* Set group sticker
-""""
+"""
 """
 
 SET_DESC_HANDLER = CommandHandler("setdesc", set_desc)
