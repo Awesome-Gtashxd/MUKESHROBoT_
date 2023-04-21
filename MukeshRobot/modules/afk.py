@@ -70,7 +70,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
                 gs(chat.id, "afk_array6"),
                 gs(chat.id, "afk_array7"),
                 gs(chat.id, "afk_array8"),
-            ]
+            
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
