@@ -1,5 +1,4 @@
-# By @TroJanzHEX
-# Improved by TeamDaisyX
+
 
 from pyrogram import filters
 from pyrogram.types import (
@@ -9,7 +8,6 @@ from pyrogram.types import (
     Message,
 )
 
-# By @TroJanzHEX
 from MukeshRobot.utils.ImageEditor.edit_1 import (  # pylint:disable=import-error
     black_white,
     box_blur,
