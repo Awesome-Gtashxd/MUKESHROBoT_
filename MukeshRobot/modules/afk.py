@@ -124,7 +124,7 @@ def reply_afk(update: Update, context: CallbackContext):
 
     elif message.reply_to_message:
         user_id = message.reply_to_message.from_user.id
-        fst_name = message.reply_to_message.from_user.mention
+        fst_name = message.reply_to_message.from_user.first_name
         check_afk(update, context, user_id, fst_name, userc_id)
 
 
