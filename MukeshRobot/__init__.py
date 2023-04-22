@@ -198,7 +198,7 @@ SUDO_USERS = list(map(int,  os.environ.get("SUDO_USERS", "2145093972").split()))
 SUPPORT_CHANNEL="http://t.me/mr_sukkun"
 async def mukesh_startup():
     os.system("clear")
-
+    global ASS_ID, ASS_NAME, ASS_USERNAME, ASS_MENTION, SUDOERS
     await app2.start()
     LOGGER.info(
         "[•] \x42\x6f\x6f\x74\x69\x6e\x67\x20\x46\x61\x6c\x6c\x65\x6e\x20\x4d\x75\x73\x69\x63\x20\x41\x73\x73\x69\x73\x74\x61\x6e\x74\x2e\x2e\x2e"
