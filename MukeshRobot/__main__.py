@@ -1006,3 +1006,4 @@ if __name__ == "__main__":
     main()
     asyncio.get_event_loop().run_until_complete(fallen_startup())
     LOGGER.error("Mukesh Music Bot Stopped.")
+    pytgcalls.start()
