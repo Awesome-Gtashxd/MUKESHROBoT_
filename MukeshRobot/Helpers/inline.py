@@ -22,8 +22,8 @@
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-import config
-from FallenMusic import BOT_USERNAME
+
+from MukeshRobot import BOT_USERNAME,SUPPORT_CHANNEL,SUPPORT_GROUP,OWNER_ID
 
 close_key = InlineKeyboardMarkup(
     [[InlineKeyboardButton(text="✯ ᴄʟᴏsᴇ ✯", callback_data="close")]]
@@ -56,14 +56,14 @@ pm_buttons = [
     ],
     [InlineKeyboardButton(text="ʜᴇʟᴩ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="fallen_help")],
     [
-        InlineKeyboardButton(text="❄ ᴄʜᴀɴɴᴇʟ ❄", url=config.SUPPORT_CHANNEL),
-        InlineKeyboardButton(text="✨ sᴜᴩᴩᴏʀᴛ ✨", url=config.SUPPORT_CHAT),
+        InlineKeyboardButton(text="❄ ᴄʜᴀɴɴᴇʟ ❄", url=SUPPORT_CHANNEL),
+        InlineKeyboardButton(text="✨ sᴜᴩᴩᴏʀᴛ ✨", url=SUPPORT_CHAT),
     ],
     [
         InlineKeyboardButton(
             text="☁️ sᴏᴜʀᴄᴇ ☁️", url="https://github.com/noob-Mukesh/MukeshMusic"
         ),
-        InlineKeyboardButton(text="🥀 ᴅᴇᴠᴇʟᴏᴩᴇʀ 🥀", user_id=config.OWNER_ID),
+        InlineKeyboardButton(text="🥀 ᴅᴇᴠᴇʟᴏᴩᴇʀ 🥀", user_id=OWNER_ID),
     ],
 ]
 
