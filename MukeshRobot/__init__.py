@@ -111,6 +111,8 @@ else:
     ARQ_API = os.environ.get("ARQ_API", "HZDOBT-GQPTDD-XHEGZM-XACGIA-ARQ")
     TIME_API_KEY = Config.TIME_API_KEY
     WORKERS = Config.WORKERS
+    SUPPORT_CHANNEL="https://t.me/mr_sukkun"
+    SUPPORT_CHAT="https://t.me/the_support_chat"
 
     try:
         OWNER_ID = int(Config.OWNER_ID)
