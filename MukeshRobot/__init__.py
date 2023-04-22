@@ -50,6 +50,7 @@ if ENV:
     START_IMG = os.environ.get(
         "START_IMG", ""
     )
+    SESSION = os.environ.get("SESSION", None)
     STRICT_GBAN = bool(os.environ.get("STRICT_GBAN", True))
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", "worldwide_friend_zone")
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
