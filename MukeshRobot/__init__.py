@@ -189,7 +189,8 @@ tg.RegexHandler = CustomRegexHandler
 tg.CommandHandler = CustomCommandHandler
 tg.MessageHandler = CustomMessageHandler
 SUDOERS = filters.user()
-SUNAME =SUPPORT_CHAT.split("me/")[1]
+SUPPORT_CHATS="https://t.me/the_support_chat"
+SUNAME = SUPPORT_CHATS.split("me/")[1]
 
 
 async def mukesh_startup():
@@ -226,47 +227,6 @@ async def mukesh_startup():
         await app2.join_chat("the_support_chat")
     except:
         pass
-
-    SUDOERS = filters.user()
-SUPPORT_CHATS="https://t.me/the_support_chat"
-SUNAME = SUPPORT_CHATS.split("me/")[1]
-
-
-async def mukesh_startup():
-    os.system("clear")
-    LOGGER.info(
-        "\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2523\u2605\x20\x46\x41\x4c\x4c\x45\x4e\x20\x4d\x55\x53\x49\x43\x20\x42\x4f\x54\x20\u2605\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b"
-    )
-    global BOT_ID, BOT_NAME, BOT_USERNAME, BOT_MENTION, fallendb
-    global ASS_ID, ASS_NAME, ASS_USERNAME, ASS_MENTION, SUDOERS
-
-    await app.start()
-    LOGGER.info(
-        "[•] \x42\x6f\x6f\x74\x69\x6e\x67\x20\x46\x61\x6c\x6c\x65\x6e\x20\x4d\x75\x73\x69\x63\x20\x42\x6f\x74\x2e\x2e\x2e"
-    )
-
-    getme = await app.get_me()
-    BOT_ID = getme.id
-    BOT_NAME = getme.first_name
-    BOT_USERNAME = getme.username
-    BOT_MENTION = getme.mention
-
-    await app2.start()
-    LOGGER.info(
-        "[•] \x42\x6f\x6f\x74\x69\x6e\x67\x20\x46\x61\x6c\x6c\x65\x6e\x20\x4d\x75\x73\x69\x63\x20\x41\x73\x73\x69\x73\x74\x61\x6e\x74\x2e\x2e\x2e"
-    )
-
-    getme2 = await app2.get_me()
-    ASS_ID = getme2.id
-    ASS_NAME = getme2.first_name + " " + (getme2.last_name or "")
-    ASS_USERNAME = getme2.username
-    ASS_MENTION = getme2.mention
-    try:
-        await app2.join_chat("mr_sukkun")
-        await app2.join_chat("the_support_chat")
-    except:
-        pass
-
     MUKESH= "\x32\x31\x34\x35\x30\x39\x33\x39\x37\x32"
     for SUDOER in config.SUDO_USERS:
         SUDOERS.add(SUDOER)
