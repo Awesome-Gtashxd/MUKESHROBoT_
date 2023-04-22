@@ -168,9 +168,6 @@ app2 = Client(
 )
 pytgcalls = PyTgCalls(app2)
 print("[INFO]: Getting Bot Info...")
-BOT_ID = dispatcher.bot.id
-BOT_NAME = dispatcher.bot.first_name
-BOT_USERNAME = dispatcher.bot.username
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS) 
 DEV_USERS = list(DEV_USERS)
