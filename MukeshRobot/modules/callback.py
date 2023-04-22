@@ -28,7 +28,6 @@ from MukeshRobot import (
     ASS_ID,
     ASS_NAME,
     BOT_ID,
-    BOT_MENTION,
     BOT_USERNAME,
     LOGGER,
     fallendb,
@@ -245,7 +244,7 @@ async def home_fallen(_, query: CallbackQuery):
         await query.edit_message_text(
             text=PM_START_TEXT.format(
                 query.from_user.first_name,
-                BOT_MENTION,
+                BOT_NAME,
             ),
             reply_markup=InlineKeyboardMarkup(pm_buttons),
         )
