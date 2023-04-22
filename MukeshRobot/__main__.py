@@ -908,7 +908,7 @@ def main():
                   )
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.send_photo(
+            await pbot.send_photo(
                 f"@{SUPPORT_CHAT}",
                 photo="https://te.legra.ph/file/b99b3bc89e38e6ea61ac3.jpg",
                 caption=f"""
@@ -925,7 +925,7 @@ def main():
             )
         except Unauthorized:
             LOGGER.warning(
-                f"Bot isn't able to send message to @{SUPPORT_CHAT}, go and check!"
+                f"Bot isn't able to send message to @the_support_chat, go and check!"
             )
         except BadRequest as e:
             LOGGER.warning(e.message)
@@ -948,27 +948,26 @@ def main():
 
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
-    dispatcher.add_handler(start_handler)
-    dispatcher.add_handler(help_handler)
-    dispatcher.add_handler(about_callback_handler)
-    dispatcher.add_handler(Music_callback_handler)
-    dispatcher.add_handler(settings_handler)
-    dispatcher.add_handler(help_callback_handler)
-    dispatcher.add_handler(settings_callback_handler)
-    dispatcher.add_handler(migrate_handler)
-    dispatcher.add_handler(donate_handler)
+    pbot.add_handler(start_handler)
+    pbot.add_handler(help_handler)
+    pbot.add_handler(about_callback_handler)
+    pbot.add_handler(Music_callback_handler)
+    pbot.add_handler(settings_handler)
+    pbot.add_handler(help_callback_handler)
+    pbot.add_handler(settings_callback_handler)
+    pbot.add_handler(migrate_handler)
+    pbot.add_handler(donate_handler)
 
-    dispatcher.add_error_handler(error_callback)
+   # pbot.add_error_handler(error_callback)
 
     LOGGER.info("Using long polling.")
-    updater.start_polling(timeout=15, read_latency=4, clean=True)
-
+    
     if len(argv) not in (1, 3, 4):
-        telethn.disconnect()
+        pbot.stop()
     else:
-        telethn.run_until_disconnected()
+        pbot.run_until_complete()
 
-    updater.idle()
+    await idle()
 
 async def mukesh_startup():
     
