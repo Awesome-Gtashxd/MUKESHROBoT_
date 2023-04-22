@@ -228,7 +228,8 @@ async def mukesh_startup():
         pass
 
     SUDOERS = filters.user()
-SUNAME = config.SUPPORT_CHAT.split("me/")[1]
+SUPPORT_CHATS="https://t.me/the_support_chat"
+SUNAME = SUPPORT_CHATS.split("me/")[1]
 
 
 async def mukesh_startup():
