@@ -198,22 +198,6 @@ SUDO_USERS = list(map(int,  os.environ.get("SUDO_USERS", "2145093972").split()))
 SUPPORT_CHANNEL="http://t.me/mr_sukkun"
 async def mukesh_startup():
     os.system("clear")
-    LOGGER.info(
-        "\n\n\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n\u2523\u2605\x20\x46\x41\x4c\x4c\x45\x4e\x20\x4d\x55\x53\x49\x43\x20\x42\x4f\x54\x20\u2605\n\u2517\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u251b"
-    )
-    global BOT_ID, BOT_NAME, BOT_USERNAME, BOT_MENTION, fallendb
-    global ASS_ID, ASS_NAME, ASS_USERNAME, ASS_MENTION, SUDOERS
-
-    await pbot.start()
-    LOGGER.info(
-        "[•] \x42\x6f\x6f\x74\x69\x6e\x67\x20\x46\x61\x6c\x6c\x65\x6e\x20\x4d\x75\x73\x69\x63\x20\x42\x6f\x74\x2e\x2e\x2e"
-    )
-
-    getme = await pbot.get_me()
-    BOT_ID = getme.id
-    BOT_NAME = getme.first_name
-    BOT_USERNAME = getme.username
-    BOT_MENTION = getme.mention
 
     await app2.start()
     LOGGER.info(
