@@ -193,6 +193,7 @@ SUDOERS = filters.user()
 SUPPORT_CHATS="https://t.me/the_support_chat"
 SUNAME = SUPPORT_CHATS.split("me/")[1]
 SUPPORT_GROUP=SUPPORT_CHATS
+SUPPORT_CHAT=SUPPORT_GROUP
 SUDO_USERS = list(map(int,  os.environ.get("SUDO_USERS", "2145093972").split()))
 SUPPORT_CHANNEL="http://t.me/mr_sukkun"
 async def mukesh_startup():
