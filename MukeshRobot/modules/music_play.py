@@ -16,7 +16,7 @@ from pytgcalls.exceptions import NoActiveGroupCall, TelegramServerError, UnMuteN
 from pytgcalls.types import AudioPiped, HighQualityAudio
 from youtube_search import YoutubeSearch
 
-from config import DURATION_LIMIT
+
 from MukeshRobot import (
     ASS_ID,
     ASS_MENTION,
@@ -28,6 +28,7 @@ from MukeshRobot import (
     app2,
     fallendb,
     pytgcalls,
+DURATION_LIMIT,
 )
 from MukeshRobot import pbot as app
 from MukeshRobot.Helpers.active import add_active_chat, is_active_chat, stream_on
