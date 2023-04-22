@@ -1,24 +1,4 @@
-# MIT License
-#
-# Copyright (c) 2023 AnonymousX1025
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
+
 
 import os
 import re
@@ -30,9 +10,9 @@ import numpy as np
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 from youtubesearchpython.__future__ import VideosSearch
 
-from config import FAILED
-from MukeshRobot import BOT_ID, LOGGER, app
-
+FAILED="https://te.legra.ph/file/4c896584b592593c00aa8.jpg"
+from MukeshRobot import BOT_ID, LOGGER
+from MukeshRobot import pbot as app
 
 def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
@@ -108,7 +88,7 @@ async def gen_thumb(videoid, user_id):
         x = f.resize((107, 107))
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        bg = Image.open(f"FallenMusic/Helpers/utils/circle.png")
+        bg = Image.open(f"MukeshRobot/Helpers/utils/circle.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(30))
@@ -143,10 +123,10 @@ async def gen_thumb(videoid, user_id):
         background.paste(image3, (0, 0), mask=image3)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("FallenMusic/Helpers/utils/font2.ttf", 45)
-        ImageFont.truetype("FallenMusic/Helpers/utils/font2.ttf", 70)
-        arial = ImageFont.truetype("FallenMusic/Helpers/utils/font2.ttf", 30)
-        ImageFont.truetype("FallenMusic/Helpers/utils/font.ttf", 30)
+        font = ImageFont.truetype("MukeshRobot/Helpers/utils/font2.ttf", 45)
+        ImageFont.truetype("MukeshRobot/Helpers/utils/font2.ttf", 70)
+        arial = ImageFont.truetype("MukeshRobot/Helpers/utils/font2.ttf", 30)
+        ImageFont.truetype("MukeshRobot/Helpers/utils/font.ttf", 30)
         para = textwrap.wrap(title, width=32)
         try:
             draw.text(
@@ -253,7 +233,7 @@ async def gen_qthumb(videoid, user_id):
         x = f.resize((107, 107))
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        bg = Image.open(f"FallenMusic/Helpers/utils/circle.png")
+        bg = Image.open(f"MukeshRobot/Helpers/utils/circle.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(30))
@@ -288,10 +268,10 @@ async def gen_qthumb(videoid, user_id):
         background.paste(image3, (0, 0), mask=image3)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("FallenMusic/Helpers/utils/font2.ttf", 45)
-        ImageFont.truetype("FallenMusic/Helpers/utils/font2.ttf", 70)
-        arial = ImageFont.truetype("FallenMusic/Helpers/utils/font2.ttf", 30)
-        ImageFont.truetype("FallenMusic/Helpers/utils/font.ttf", 30)
+        font = ImageFont.truetype("MukeshRobot/Helpers/utils/font2.ttf", 45)
+        ImageFont.truetype("MukeshRobot/Helpers/utils/font2.ttf", 70)
+        arial = ImageFont.truetype("MukeshRobot/Helpers/utils/font2.ttf", 30)
+        ImageFont.truetype("MukeshRobot/Helpers/utils/font.ttf", 30)
         para = textwrap.wrap(title, width=32)
         try:
             draw.text(
