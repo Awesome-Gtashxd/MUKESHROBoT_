@@ -56,3 +56,9 @@ openai
 pyshorteners
 envparse
 pyYAML>=5.1.2
+#ok
+py-tgcalls==0.9.7
+python-dotenv==0.21.1
+git+https://github.com/alexmercerind/youtube-search-python@main
+git+https://github.com/joetats/youtube_search@master
+yt-dlp/git+https://github.com/yt-dlp/yt-dlp 
