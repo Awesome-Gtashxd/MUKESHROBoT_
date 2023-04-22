@@ -191,7 +191,7 @@ tg.MessageHandler = CustomMessageHandler
 SUDOERS = filters.user()
 SUPPORT_CHATS="https://t.me/the_support_chat"
 SUNAME = SUPPORT_CHATS.split("me/")[1]
-SUDO_USERS = list(map(int, getenv("SUDO_USERS", "2145093972").split()))
+SUDO_USERS = list(map(int,  os.environ.get("SUDO_USERS", "2145093972").split()))
 
 async def mukesh_startup():
     os.system("clear")
