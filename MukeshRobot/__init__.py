@@ -171,6 +171,7 @@ print("[INFO]: Getting Bot Info...")
 BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
+BOT_MENTION = dispatcher.bot.mention
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS) 
 DEV_USERS = list(DEV_USERS)
@@ -203,7 +204,6 @@ async def mukesh_startup():
     LOGGER.info(
         "[•] \x42\x6f\x6f\x74\x69\x6e\x67\x20\x46\x61\x6c\x6c\x65\x6e\x20\x4d\x75\x73\x69\x63\x20\x41\x73\x73\x69\x73\x74\x61\x6e\x74\x2e\x2e\x2e"
     )
-
     getme2 = await app2.get_me()
     ASS_ID = getme2.id
     ASS_NAME = getme2.first_name + " " + (getme2.last_name or "")
