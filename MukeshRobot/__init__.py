@@ -166,6 +166,7 @@ app2 = Client(
     api_hash=API_HASH,
     session_string=str(SESSION)
 )
+pytgcalls = PyTgCalls(app2)
 print("[INFO]: Getting Bot Info...")
 BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
