@@ -171,7 +171,8 @@ print("[INFO]: Getting Bot Info...")
 BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
-BOT_MENTION = dispatcher.bot.mention
+getme2 = await pbot.get_me()
+BOT_MENTION = getme2.mention
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS) 
 DEV_USERS = list(DEV_USERS)
