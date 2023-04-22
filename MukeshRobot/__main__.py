@@ -5,6 +5,8 @@ import asyncio
 from platform import python_version as y
 from sys import argv
 import os
+import importlib
+from pyrogram import idle
 from pyrogram import __version__ as pyrover
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram import __version__ as telever
@@ -1002,5 +1004,5 @@ if __name__ == "__main__":
     telethn.start(bot_token=TOKEN)
     pbot.start()
     main()
-    mukesh_startup()
+    asyncio.get_event_loop().run_until_complete(fallen_startup())
     LOGGER.error("Mukesh Music Bot Stopped.")
