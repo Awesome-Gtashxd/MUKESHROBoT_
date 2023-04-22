@@ -171,8 +171,6 @@ print("[INFO]: Getting Bot Info...")
 BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
-getme2 = await pbot.get_me()
-BOT_MENTION = getme2.mention
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS) 
 DEV_USERS = list(DEV_USERS)
@@ -200,6 +198,13 @@ SUDO_USERS = list(map(int,  os.environ.get("SUDO_USERS", "2145093972").split()))
 SUPPORT_CHANNEL="http://t.me/mr_sukkun"
 async def mukesh_startup():
     os.system("clear")
+    
+    getme = await pbot.get_me()
+    BOT_ID = getme.id
+    BOT_NAME = getme.first_name
+    BOT_USERNAME = getme.username
+    BOT_MENTION = getme.mention
+    global BOT_ID, BOT_NAME, BOT_USERNAME, BOT_MENTION, fallendb
     global ASS_ID, ASS_NAME, ASS_USERNAME, ASS_MENTION, SUDOERS
     await app2.start()
     LOGGER.info(
