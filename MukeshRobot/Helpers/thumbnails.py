@@ -31,7 +31,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFo
 from youtubesearchpython.__future__ import VideosSearch
 
 from config import FAILED
-from FallenMusic import BOT_ID, LOGGER, app
+from MukeshRobot import BOT_ID, LOGGER, app
 
 
 def changeImageSize(maxWidth, maxHeight, image):
