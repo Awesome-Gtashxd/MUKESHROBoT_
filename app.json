@@ -77,6 +77,11 @@
          "required": true,
          "value": "5LB4TAKPEKZ0"
       },
+      "SESSION": {
+        "description": "A pyrogram v2 string session from @StringFatherBot",
+        "value": "",
+        "required": true,
+      },
       "TOKEN": {
          "description": "Get bot token from @BotFather on TG",
          "required": true,
