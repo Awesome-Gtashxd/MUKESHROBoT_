@@ -1003,8 +1003,8 @@ if __name__ == "__main__":
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
     pbot.start()
-    main()
+    
     asyncio.get_event_loop().run_until_complete(mukesh_startup())
     LOGGER.error("Mukesh Music Bot Stopped.")
     pytgcalls.start()
-    idle()
+   
