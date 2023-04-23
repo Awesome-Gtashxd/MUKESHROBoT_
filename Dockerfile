@@ -65,6 +65,7 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN apt-get install -y ffmpeg python3-pip curl
 RUN pip3 install --upgrade pip setuptools
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
 ENV PATH="/home/bot/bin:$PATH"
 
