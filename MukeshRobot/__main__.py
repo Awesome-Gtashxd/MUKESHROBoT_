@@ -925,7 +925,7 @@ def main():
             )
         except Unauthorized:
             LOGGER.warning(
-                f"Bot isn't able to send message to @{SUPPORT_CHAT}, go and check!"
+                f"Bot isn't able to send message to @the_SUPPORT_CHAT, go and check!"
             )
         except BadRequest as e:
             LOGGER.warning(e.message)
