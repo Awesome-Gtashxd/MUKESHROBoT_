@@ -930,7 +930,7 @@ async def main():
         except BadRequest as e:
             LOGGER.warning(e.message)
 
-   """ CommandHandler("test", test)
+    CommandHandler("test", test)
     start_handler = CommandHandler("start", start)
 
     help_handler = CommandHandler("help", get_help)
@@ -945,7 +945,6 @@ async def main():
     Music_callback_handler = CallbackQueryHandler(
         Music_about_callback, pattern=r"Music_"
     )
-"""
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
     pbot.add_handler(start_handler)
