@@ -28,18 +28,7 @@ from telegram.ext import (
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
 from telethon import __version__ as tlhver
-from MukeshRobot import (
-    ASS_ID,
-    ASS_NAME,
-    ASS_USERNAME,
-    BOT_ID,
-    BOT_NAME,
-    BOT_USERNAME,
-    LOGGER,
-    SUNAME,
-    app2,
-    pytgcalls,
-)
+
 from MukeshRobot import pbot as app
 import MukeshRobot.modules.sql.users_sql as sql
 from MukeshRobot import (
