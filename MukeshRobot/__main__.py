@@ -893,7 +893,7 @@ def migrate_chats(update: Update, context: CallbackContext):
     raise DispatcherHandlerStop
 
 
-async def main():
+def main():
     global x
     x=InlineKeyboardMarkup(
                 [
@@ -908,7 +908,7 @@ async def main():
                   )
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            await pbot.send_photo(
+            dispatcher.bot.send_photo(
                 f"@{SUPPORT_CHAT}",
                 photo="https://te.legra.ph/file/b99b3bc89e38e6ea61ac3.jpg",
                 caption=f"""
@@ -925,7 +925,7 @@ async def main():
             )
         except Unauthorized:
             LOGGER.warning(
-                f"Bot isn't able to send message to @the_support_chat, go and check!"
+                f"Bot isn't able to send message to @{SUPPORT_CHAT}, go and check!"
             )
         except BadRequest as e:
             LOGGER.warning(e.message)
@@ -945,28 +945,30 @@ async def main():
     Music_callback_handler = CallbackQueryHandler(
         Music_about_callback, pattern=r"Music_"
     )
+
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
-    pbot.add_handler(start_handler)
-    pbot.add_handler(help_handler)
-    pbot.add_handler(about_callback_handler)
-    pbot.add_handler(Music_callback_handler)
-    pbot.add_handler(settings_handler)
-    pbot.add_handler(help_callback_handler)
-    pbot.add_handler(settings_callback_handler)
-    pbot.add_handler(migrate_handler)
-    pbot.add_handler(donate_handler)
+    dispatcher.add_handler(start_handler)
+    dispatcher.add_handler(help_handler)
+    dispatcher.add_handler(about_callback_handler)
+    dispatcher.add_handler(Music_callback_handler)
+    dispatcher.add_handler(settings_handler)
+    dispatcher.add_handler(help_callback_handler)
+    dispatcher.add_handler(settings_callback_handler)
+    dispatcher.add_handler(migrate_handler)
+    dispatcher.add_handler(donate_handler)
 
-   # pbot.add_error_handler(error_callback)
+    dispatcher.add_error_handler(error_callback)
 
     LOGGER.info("Using long polling.")
-    
-    if len(argv) not in (1, 3, 4):
-        pbot.stop()
-    else:
-        pbot.run_until_complete()
+    updater.start_polling(timeout=15, read_latency=4, clean=True)
 
-    await idle()
+    if len(argv) not in (1, 3, 4):
+        telethn.disconnect()
+    else:
+        telethn.run_until_disconnected()
+
+    updater.idle()
 
 async def mukesh_startup():
     
@@ -1001,7 +1003,7 @@ if __name__ == "__main__":
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
     pbot.start()
-    await main()
+    main()
     asyncio.get_event_loop().run_until_complete(mukesh_startup())
     LOGGER.error("Mukesh Music Bot Stopped.")
-    pytgcalls.start()
+    
