@@ -29,7 +29,6 @@ from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
 from telethon import __version__ as tlhver
 
-from MukeshRobot import pbot as app
 import MukeshRobot.modules.sql.users_sql as sql
 from MukeshRobot import (
     BOT_NAME,
@@ -41,7 +40,6 @@ from MukeshRobot import (
     TOKEN,
     StartTime,
     dispatcher,
-    pbot,
     telethn,
     updater,
 )
@@ -965,7 +963,4 @@ def main():
 if __name__ == "__main__":
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
-    pbot.start()
     main()
-    
-   
