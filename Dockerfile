@@ -6,6 +6,7 @@ ENV PIP_NO_CACHE_DIR 1
 RUN sed -i.bak 's/us-west-2\.ec2\.//' /etc/apt/sources.list
 
 # Installing Required Packages
+
 RUN apt update && apt upgrade -y && \
     apt install --no-install-recommends -y \
     debian-keyring \
@@ -64,7 +65,7 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN apt-get install -y ffmpeg python3-pip curl
 RUN pip3 install --upgrade pip setuptools
-
+RUN apt-get install -y nodejs
 ENV PATH="/home/bot/bin:$PATH"
 
 # make directory
