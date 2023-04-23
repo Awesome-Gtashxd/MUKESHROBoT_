@@ -909,7 +909,7 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.send_photo(
-                f"@{SUPPORT_CHAT}",
+                f"@the_support_chat",
                 photo="https://te.legra.ph/file/b99b3bc89e38e6ea61ac3.jpg",
                 caption=f"""
 ✨ㅤ{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ.
@@ -925,7 +925,7 @@ def main():
             )
         except Unauthorized:
             LOGGER.warning(
-                f"Bot isn't able to send message to @the_SUPPORT_CHAT, go and check!"
+                f"Bot isn't able to send message to @the\_SUPPORT\_CHAT, go and check!"
             )
         except BadRequest as e:
             LOGGER.warning(e.message)
