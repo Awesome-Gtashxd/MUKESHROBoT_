@@ -7,9 +7,10 @@ import base64
 import asyncio
 import telegram.ext as tg
 from aiohttp import ClientSession
-from pyrogram import Client, errors,filters
+from pyrogram import Client, errors, filters, idle
 from telethon import TelegramClient
 from pytgcalls import PyTgCalls
+
 StartTime = time.time()
 
 # enable logging
